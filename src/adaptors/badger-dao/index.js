@@ -115,7 +115,7 @@ async function queryVaults(chain) {
 
       // influence vaults include non harvested incentives, projection harvest APR are not
       // valid for these specific class of vaults - historic performance if preferred
-      if (e.version === 'v1.5' && !influenceVaults.includes(pool)) {
+      if (e.version === 'v1.5' && !influenceVaults.has(pool)) {
         apyBase = harvestApr;
         apyReward = nonHarvestApr;
       }
